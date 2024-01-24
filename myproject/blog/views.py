@@ -1,10 +1,18 @@
 from django.shortcuts import render
 import requests
 
-db = [
+mainprojects = [
 {'author': 'MMO', 'title': 'zxc', 'content': 'zxzsd', 'date_added': '2023' , 'link':'https://docs.djangoproject.com/en/5.0/ref/urls/', 'short_desc':''},
 {'author': 'MMzxcO', 'title': 'zxrr', 'content': 'zxzsw', 'date_added': '2024' , 'link':'https://docs.djangoproject.com/en/5.0/ref/urls/', 'short_desc':''}
 ]
+
+about = {
+    'phone': '+380500356268',
+    'email': 'm.muzyka.mailbox@gmail.com',
+    'linkedin': 'https://www.linkedin.com/in/mykhailo-muzyka1/',
+    'github': 'https://github.com/MuzykaMichael',
+    'TG': 'https://t.me/batich_v_zdanii',
+}
 
 
 
@@ -12,11 +20,14 @@ def home(request):
     return render(request, 'blog/home.html')
 
 def contact(request):
-    return render(request, 'blog/contact.html')
+    context = {
+        'contact': about
+    }
+    return render(request, 'blog/contact.html', context)
 
 def projects(request):
     context = {
-        "projects": db,
+        "projects": mainprojects,
     }
     return render(request, 'blog/projects.html', context)
 

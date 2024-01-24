@@ -5,5 +5,22 @@
 </head>
 <body>
     <h1>Contacts</h1>
+    <ul>
+        <li>
+            <a href='mailto:{{contact.email}}'>{{contact.email}}</a>
+        </li>
+        <li>
+            <a href='tel:{{contact.phone}}'>{{contact.phone}}</a>
+        </li>
+        <li>
+            <a href={{contact.linkedin}} target="_blank">LinkedIn</a>
+        </li>
+        <li>
+            <a href={{contact.github}} target="_blank">GitHub</a>
+        </li>
+        <li>
+            <a href={{contact.TG}} target="_blank">Telegram</a>
+        </li>
+    </ul>
 </body>
 </html>
