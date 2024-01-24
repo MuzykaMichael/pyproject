@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import requests
+# from .forms import PDFFileForm
 
 mainprojects = [
 {'author': 'MMO', 'title': 'zxc', 'content': 'zxzsd', 'date_added': '2023' , 'link':'https://docs.djangoproject.com/en/5.0/ref/urls/', 'short_desc':''},
@@ -7,6 +8,7 @@ mainprojects = [
 ]
 
 about = {
+    'title': 'My Contacts',
     'phone': '+380500356268',
     'email': 'm.muzyka.mailbox@gmail.com',
     'linkedin': 'https://www.linkedin.com/in/mykhailo-muzyka1/',
@@ -36,7 +38,18 @@ def currencyapi(request):
     res = r['rates']
     context = {
         'rates': res.items(),
+        'title': 'Currency API Page'
     }
     return render(request, 'blog/currencyapi.html', context)
 
+# def uploadpdf(request):
+#     if request.method == 'POST':
+#         form = PDFFileForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('success')
+#         else:
+#             form = PDFFileForm()
+#             return render(request, 'upload.html', {'form': form})
+#
 

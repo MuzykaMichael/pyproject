@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    {% if contact.title %}
+    <title>{{contact.title}}</title>
+    {% endif %}
+    <title>Contact Info</title>
 </head>
 <body>
     <h1>Contacts</h1>
