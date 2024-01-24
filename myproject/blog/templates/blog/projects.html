@@ -4,6 +4,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Education</h1>
+    <h1>Projects</h1>
+    <ul>
+        {% for project in projects %}
+        <li>
+            <h2>{{project.title}}</h2>
+            <p>Project Description: {{project.short_desc}}</p>
+            <p>Key technologies: {{project.content}}</p>
+            <a href={{project.link}}>GitHub Link</a>
+            <p>Created by {{project.author}} at: {{project.date_added}}</p>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

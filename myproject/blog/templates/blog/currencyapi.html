@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>CurrencyAPI</h1>
+    <ul>
+        {% for key, value in rates %}
+        <li>
+            <h3>Currency: {{key}} - Price: {{value}}</h3>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
